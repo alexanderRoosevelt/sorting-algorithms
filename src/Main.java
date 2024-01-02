@@ -10,7 +10,9 @@ public class Main {
     // Alghoritm.bubbleSort(nums);
     // 2) Insert Sort
     // Alghoritm.insertionSort(nums);
-    System.out.println(Arrays.toString(nums)); //[2, 3, 4, 5, 6, 7, 8, 10, 12]
+    int[] arr = Alghoritm.quickSort(nums);
+    System.out.println(Arrays.toString(arr)); //[2, 3, 4, 5, 6, 7, 8, 10, 12]
+
 
   }
 }
