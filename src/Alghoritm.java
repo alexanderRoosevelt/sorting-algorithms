@@ -68,4 +68,52 @@ public class Alghoritm {
     arr[i] = arr[j];
     arr[j] = temp;
   }
+
+  // Best time - O(n * log n) Bad time - O(n * log n)
+  public static int[] mergeSort(int[] nums) {
+    if (nums.length < 2) {
+      return nums;
+    }
+
+    int s = nums.length;
+    int[] temp = new int[s];
+
+    mergeSort(nums, temp, 0, s - 1);
+    return nums;
+  }
+
+  private static void mergeSort(int[] nums, int[] temp, int left, int right) {
+
+    if (left < right) {
+
+      int mid = left + (right - left) / 2;
+      mergeSort(nums, temp, left, mid);
+      mergeSort(nums, temp, mid + 1, right);
+
+      merge(nums, temp, mid, left, right);
+    }
+  }
+
+  private static void merge(int[] nums, int[] temp, int mid, int left, int right) {
+
+    for(int i = left; i <= right; i++) {
+      temp[i] = nums[i];
+    }
+
+    int i = left;
+    int j = mid + 1;
+    int k = left;
+
+    while (i <= mid && j <= right) {
+      if(temp[i] <= temp[j]) {
+        nums[k++] = temp[i++];
+      } else {
+        nums[k++] = temp[j++];
+      }
+    }
+
+    while (i <= mid) {
+      nums[k++] = temp[i++];
+    }
+  }
 }
