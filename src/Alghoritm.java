@@ -100,6 +100,10 @@ public class Alghoritm {
       temp[i] = nums[i];
     }
 
+    // 2 var
+    // if (right + 1 - left >= 0)
+    //   System.arraycopy(nums, left, temp, left, right + 1 - left);
+
     int i = left;
     int j = mid + 1;
     int k = left;
